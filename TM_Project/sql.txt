@@ -1,0 +1,13 @@
+create database TASKMANAGER;
+use TASKMANAGER;
+
+drop table projects;
+drop table EmployeeRegistration;
+drop table EmployeeLogin;
+create table EmployeeLogin(username varchar(25) primary key,password varchar(25));
+create table EmployeeRegistration(ID int primary key AUTO_INCREMENT,username varchar(25),email varchar(40),number varchar(13),dateofjoin date,jobspc varchar(10));
+Alter table EmployeeRegistration ADD FOREIGN KEY(username) REFERENCES EmployeeLogin(username);
+
+
+create table projects(projectname varchar(25) primary key,deadline date,language varchar(20),filepath varchar(30),discription varchar(50),employee varchar(20),status varchar(10));
+Alter table projects ADD FOREIGN KEY(employee) REFERENCES EmployeeLogin(username);
