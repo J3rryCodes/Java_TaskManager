@@ -328,7 +328,7 @@ public class TaskManagerDaoImpl implements TaskManagerDao {
 				+ "="+id;
 		ArrayList<Replay> replay = new ArrayList<Replay>();
 		Replay r;
-		System.out.println(sql);
+		System.out.println("getReplayByID------"+sql);
 		
 		ResultSet rs= dbConnection.getData(sql);
 		try {
@@ -342,6 +342,14 @@ public class TaskManagerDaoImpl implements TaskManagerDao {
 			}
 		}catch(Exception e) {e.printStackTrace();}
 		return replay;
+	}
+
+	@Override
+	public void seenNotification(int id) {
+		String sql = "update replay set seen=1 where id="+id;
+		
+		System.out.println("seenNotification-------"+sql);
+		dbConnection.updateData(sql);
 	}
 
 }

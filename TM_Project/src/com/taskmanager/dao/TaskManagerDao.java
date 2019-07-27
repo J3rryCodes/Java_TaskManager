@@ -34,6 +34,8 @@ public interface TaskManagerDao {
 	public ArrayList<EmployeeData> getEmployeeByLanguageId(int languageID);
 	//saveTask
 	public void saveTask(int projectId, int employeeId, String discription, String date, String filePath);
+	//seenNotification 
+	public void seenNotification(int id);
 	//saveReport
 	public void saveReport(int employeeId,String title,String report);
 	//getAllReport

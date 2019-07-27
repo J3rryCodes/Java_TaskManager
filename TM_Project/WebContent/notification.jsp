@@ -9,7 +9,6 @@
 <link rel="stylesheet" type="text/css" href="css/mystyle.css">
 <script>
 function fun(id){
-	alert(id);
 	window.location="seenNotificaation?id="+id;
 }
 </script>
